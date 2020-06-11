@@ -1,14 +1,9 @@
-# dataworks-repo-template
-Template repository for DataWorks GitHub
+# dataworks-repo-template-docker
 
-This repo contains the Makefile to fit the standard pattern.
-This repo will be used as a base to create new non-Terraform repos, upon which the user runs make initial-commit, adding the githooks submodule, making the repo ready for use.
+## Description
 
-### Initialisation steps
-Welcome to your new DataWorks GitHub repository.
+This repo contains Makefile, and Dockerfile to fit the standard pattern.
+This repo is a base to create new Docker image repos, adding the githooks submodule, making the repo ready for use.
 
-Please run:  
-`make initial-commit`
-to begin using your repository.  
-
-The `initial-commit` will create a PR adding the `dataworks-githooks` submodule to the `.githooks` folder.  For more info see: [dataworks-githooks](https://github.com/dwp/dataworks-githooks)
+After cloning this repo, please run:  
+`make bootstrap`
