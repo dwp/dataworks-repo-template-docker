@@ -5,7 +5,7 @@ jobs:
       - get: dataworks-repo-template-docker
         trigger: true
         passed:
-          - development
+          - management-dev
       - .: (( inject meta.plan.terraform-bootstrap ))
       - .: (( inject meta.plan.terraform-apply ))
         params:
