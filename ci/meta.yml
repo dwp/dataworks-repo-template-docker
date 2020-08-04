@@ -44,8 +44,6 @@ meta:
           - name: dataworks-repo-template-docker
         outputs:
           - name: terraform-bootstrap
-      params:
-        AWS_REGION: eu-west-2
     terraform-apply:
       task: terraform-apply
       .: (( inject meta.plan.terraform-common-config ))

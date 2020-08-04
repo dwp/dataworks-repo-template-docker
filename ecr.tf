@@ -1,8 +1,8 @@
 resource "aws_ecr_repository" "example" {
-  name = "hive-exporter"
+  name = "example"
   tags = merge(
     local.common_tags,
-    { DockerHub : "dwpdigital/hive-exporter" }
+    { DockerHub : "dwpdigital/example" }
   )
 }
 

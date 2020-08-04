@@ -3,7 +3,7 @@ resources:
     type: registry-image-resource
     source:
       repository: dwpdigital/example
-    check_every: 1h
+    check_every: 5m
 
   - name: ecr-dwpdigital-example-dev
     .: (( inject meta.resources.ecr-resource ))
