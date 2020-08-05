@@ -8,5 +8,5 @@ resource_types:
   - name: registry-image-resource
     type: docker-image
     source:
-      repository: chrisscottthomas/registry-image-resource
+      repository: dwpdigital/registry-image-resource
       tag: latest
