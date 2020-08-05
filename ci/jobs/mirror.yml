@@ -1,44 +1,44 @@
 resources:
-  - name: dwpdigital-example
+  - name: dwpdigital-dataworks-repo-template-docker
     type: registry-image-resource
     source:
-      repository: dwpdigital/example
+      repository: dwpdigital/dataworks-repo-template-docker
     check_every: 5m
 
-  - name: ecr-dwpdigital-example-dev
+  - name: ecr-dwpdigital-dataworks-repo-template-docker-dev
     .: (( inject meta.resources.ecr-resource ))
     source:
-      repository: "example"
+      repository: "dataworks-repo-template-docker"
 
-  - name: ecr-dwpdigital-example
+  - name: ecr-dwpdigital-dataworks-repo-template-docker
     .: (( inject meta.resources.ecr-resource ))
     source:
-      repository: "example"
+      repository: "dataworks-repo-template-docker"
       aws_role_arn: arn:aws:iam::((dataworks.aws_management_acc)):role/ci
 
 jobs:
-  - name: mirror-dwpdigital-example-dev
-    serial_groups: [example]
+  - name: mirror-dwpdigital-dataworks-repo-template-docker-dev
+    serial_groups: [dataworks-repo-template-docker]
     plan:
-      - get: dwpdigital-example
+      - get: dwpdigital-dataworks-repo-template-docker
         trigger: true
         params:
           format: oci
         attempts: 3
-      - put: ecr-dwpdigital-example-dev
+      - put: ecr-dwpdigital-dataworks-repo-template-docker-dev
         params:
-          image: "dwpdigital-example/image.tar"
+          image: "dwpdigital-dataworks-repo-template-docker/image.tar"
         attempts: 3
 
-  - name: mirror-dwpdigital-example
-    serial_groups: [example]
+  - name: mirror-dwpdigital-dataworks-repo-template-docker
+    serial_groups: [dataworks-repo-template-docker]
     plan:
-      - get: dwpdigital-example
+      - get: dwpdigital-dataworks-repo-template-docker
         trigger: true
         params:
           format: oci
         attempts: 3
-      - put: ecr-dwpdigital-example
+      - put: ecr-dwpdigital-dataworks-repo-template-docker
         params:
-          image: "dwpdigital-example/image.tar"
+          image: "dwpdigital-dataworks-repo-template-docker/image.tar"
         attempts: 3

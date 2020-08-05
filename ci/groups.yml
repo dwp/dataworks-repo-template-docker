@@ -8,5 +8,5 @@ groups:
       - dataworks-repo-template-docker-pr
   - name: mirror
     jobs:
-      - mirror-dwpdigital-example-dev
-      - mirror-dwpdigital-example
+      - mirror-dwpdigital-dataworks-repo-template-docker-dev
+      - mirror-dwpdigital-dataworks-repo-template-docker
