@@ -8,8 +8,6 @@ jobs:
         params:
           path: dataworks-repo-template-docker-pr
           status: pending
-        input_mapping:
-          dataworks-repo-template-docker: dataworks-repo-template-docker-pr
       - .: (( inject meta.plan.terraform-bootstrap ))
         input_mapping:
           dataworks-repo-template-docker: dataworks-repo-template-docker-pr
