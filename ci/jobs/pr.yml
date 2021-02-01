@@ -15,7 +15,7 @@ jobs:
         input_mapping:
           dataworks-repo-template-docker: dataworks-repo-template-docker-pr
         params:
-          TF_WORKSPACE: "management-dev"
+          TF_WORKSPACE: "management"
           DETAILED_EXITCODE: ""
         on_failure:
           put: dataworks-repo-template-docker-pr
